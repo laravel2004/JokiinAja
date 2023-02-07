@@ -1,26 +1,17 @@
-import React, { useEffect, useState } from "react";
-
+import React from "react";
 import Button from "../component/Button";
 import Card from "../component/Card";
 import ImgHome from './../assets/home.png'
 import  PCgame from './../assets/pcgame.png'
 import MobileGame from './../assets/mobilegame.jpg'
 import Collapse from "../component/Colappse";
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
+import { useNavigate } from "react-router";
 
 const Home = () => {
 
-    const [scrollProps, setScrollProps] = useState(0);
-    
-    useEffect(() => {
-        const handleScroll = () => {
-            setScrollProps(window.pageYOffset);
-        }
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, [])
-
+    const navigate = useNavigate()
     const handleGame = (e) => {
         e.preventDefault();
         window.location.replace('/#game');
@@ -30,20 +21,7 @@ const Home = () => {
         <div className="overflow-x-hidden">
             <div className="bg-primary">
                 <div>
-                    <nav className="fixed w-screen z-50">
-                        <div className={  scrollProps> 50 ? 'bg-slate-900 py-6' : 'bg-transparent py-6' }>
-                            <div className="mx-36 flex justify-between">
-                                <a href="index2.html" className="text-slate-100 font-extrabold text-2xl"><h4>JokiinAja</h4></a>
-                                <ul className="flex justify-center gap-4 text-slate-50 text-base">
-                                    <li><a href="index2.html">Home</a></li>
-                                    <li><a href="index2.html">Check Invoice</a></li>
-                                    <li><a href="index2.html">Calculator Joki</a></li>
-                                    <li><a href="index2.html">Contact Us</a></li>
-                                    <li><a href="index2.html" className="bg-white primary rounded-lg p-3">Sign In</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </nav>
+                    <Navbar />
                     <div className="grid grid-cols-2 mx-36">
                         <div className="flex flex-col justify-center text-slate-50">
                             <h1 className="text-4xl font-bold">Welcome to JokiinAja</h1>
@@ -146,6 +124,7 @@ const Home = () => {
                             <Button 
                                 title ="Browse Game"
                                 style = {`mt-10 bg-red-500 border-red-500`}
+                                onClick = {() => navigate('/pcgame')}
                             />
                         </Card>
                         <Card
@@ -157,6 +136,7 @@ const Home = () => {
                             <Button 
                                 title ="Browse Game"
                                 style = {`mt-10 bg-red-500 border-red-500`}
+                                onClick = {() => navigate('/mobilegame')}
                             />
                         </Card>
                     </div>
@@ -199,44 +179,7 @@ const Home = () => {
                     </div>
                 </div>
             </div>
-            <div className="bg-primary">
-                <div className="mx-36 flex text-slate-50 pt-10 pb-4">
-                    <div className="grid grid-cols-3 gap-4">
-                        <div>
-                            <a href="index2.html" className="text-xl font-semibold"><h4>JokiinAja</h4></a>
-                            <p className="mt-6">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, veniam?
-                            </p>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-semibold">Primacy</h4>
-                            <ul className="mt-6">
-                                <li><a href="index.html">Privacy Policy</a></li>
-                                <li><a href="index.html">Terms and conditions</a></li>
-                                <li><a href="index.html">Refund Policy</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <h4 className="text-xl font-semibold">Contact Us</h4>
-                            <div className="mt-6">
-                                <p>+62 8888 9999 100</p>
-                                <p>jokiinaja@gmail.com</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <ul className="flex gap-4 pb-4">
-                            <li><a href="index.html"><i className="uil uil-facebook-f"></i></a></li>
-                            <li><a href="index.html"><i className="uil uil-instagram-alt"></i></a></li>
-                            <li><a href="index.html"><i className="uil uil-twitter"></i></a></li>
-                            <li><a href="index.html"><i className="uil uil-linkedin-alt"></i></a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="text-slate-50 text-center mt-4  pb-5 grid grid-cols-1">  
-                    <small className="border-t border-slate-400 pt-5 w-screen">Copyright &copy; JokiinAja 2023</small>
-                </div>
-            </div>
+            <Footer />
 
         </div>
     )
