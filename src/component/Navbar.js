@@ -25,7 +25,7 @@ const Navbar = () => {
                             <Link to='/'>Home</Link>
                             <li><a href="index2.html">Check Invoice</a></li>
                             <li><a href="index2.html">Calculator Joki</a></li>
-                            <li><a href="index2.html">Contact Us</a></li>
+                            <Link to='/contactus' >Contact Us</Link>
                             <Link to='/signin'><span className="bg-white primary rounded-lg p-3">Sign In</span></Link>
                         </ul>
                     </div>

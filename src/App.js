@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import SignIn from './pages/Signin';
 import GamePC from './pages/GamePC';
 import GameMobile from './pages/GameMobile';
+import ContactUs from './pages/ContactUs';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path='/signin' element = {<SignIn />} />
         <Route path='/pcgame' element = {<GamePC />} />
         <Route path='/mobilegame' element = {<GameMobile />} />
+        <Route path='/contactus' element = {<ContactUs />} />
       </Routes>
     </>
   );
