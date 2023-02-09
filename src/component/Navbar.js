@@ -24,7 +24,7 @@ const Navbar = () => {
                         <ul className="flex justify-center gap-4 text-slate-50 text-base">
                             <Link to='/'>Home</Link>
                             <li><a href="index2.html">Check Invoice</a></li>
-                            <li><a href="index2.html">Calculator Joki</a></li>
+                            <Link to='/calculator' >Calculator Joki</Link>
                             <Link to='/contactus' >Contact Us</Link>
                             <Link to='/signin'><span className="bg-white primary rounded-lg p-3">Sign In</span></Link>
                         </ul>

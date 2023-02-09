@@ -1,11 +1,19 @@
 import React from "react";
 import Button from "../component/Button";
+import { useNavigate } from "react-router";
 import Card from "../component/Card";
 import Footer from "../component/Footer";
 import Navbar from "../component/Navbar";
 import MobileGame from './../assets/mobilegame.jpg'
 
 const GameMobile = () => {
+
+    const navigate = useNavigate()
+
+    const contactUs = (e) => {
+        navigate('/contactus');
+    }
+
     return(
         <>
             <div className="overflow-x-hidden">
@@ -21,6 +29,7 @@ const GameMobile = () => {
                                     <Button 
                                         title = "Contact Us"
                                         style = {`mt-4 bg-slate-50 secondary hover:text-slate-50`}
+                                        onClick = {contactUs}
                                     />
                                 </div>
                             </div>

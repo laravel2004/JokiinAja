@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router";
 import Button from "../component/Button";
 import Card from "../component/Card";
 import Footer from "../component/Footer";
@@ -6,6 +7,12 @@ import Navbar from "../component/Navbar";
 import MobileGame from './../assets/mobilegame.jpg'
 
 const GamePC = () => {
+
+    const navigate = useNavigate()
+
+    const contactUs = (e) => {
+        navigate('/contactus');
+    }
     return(
         <>
             <div className="overflow-x-hidden">
@@ -21,6 +28,7 @@ const GamePC = () => {
                                     <Button 
                                         title = "Contact Us"
                                         style = {`mt-4 bg-slate-50 secondary hover:text-slate-50`}
+                                        onClick = {contactUs}
                                     />
                                 </div>
                             </div>

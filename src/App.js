@@ -5,6 +5,7 @@ import SignIn from './pages/Signin';
 import GamePC from './pages/GamePC';
 import GameMobile from './pages/GameMobile';
 import ContactUs from './pages/ContactUs';
+import Calculator from './pages/Calculator';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path='/pcgame' element = {<GamePC />} />
         <Route path='/mobilegame' element = {<GameMobile />} />
         <Route path='/contactus' element = {<ContactUs />} />
+        <Route path='/calculator' element = {<Calculator />} />
       </Routes>
     </>
   );
